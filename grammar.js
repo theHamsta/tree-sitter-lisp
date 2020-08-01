@@ -25,10 +25,10 @@ module.exports = grammar({
       $._literals,
       $.symbol,
       $.scoped_symbol,
-      $._functions,
       $.quote,
       $.comment,
       $.deref,
+      $.list,
 
       $.syntax_quote,
       $.var_quote,
@@ -37,7 +37,6 @@ module.exports = grammar({
       $.unquote_splice,
       $.gensym,
 
-      $.shorthand_function_arg,
       $.reader_conditional,
     ),
 
@@ -45,20 +44,11 @@ module.exports = grammar({
       $.nil,
       $.boolean,
       $.number,
-      $.symbolic_value,
       $.character,
       $.string,
       $.keyword,
-      $._collection_literals,
       $.tagged_literal
     ),
-
-    _collection_literals: $ => seq(optional($.metadata), choice(
-      $.list,
-      $.vector,
-      $.hash_map,
-      $.set
-    )),
 
     // -------------------------------------------------------------------------
     // nil + booleans
@@ -82,12 +72,12 @@ module.exports = grammar({
     ),
 
     number_long: $ => choice($._normal_long, $._number_hex, $._number_arbitrary_radix, $._number_octal),
-    _normal_long: $ => /[-+]?\d+/,
-    _number_hex: $ => /-?0[xX][0-9a-fA-F]+/,
-    _number_arbitrary_radix: $ => /-?\d+[rR][0-9a-zA-Z]+/,
-    _number_octal: $ => /-?0\d+/,
+    _normal_long: _ => /[-+]?\d+/,
+    _number_hex: _ => /-?0[xX][0-9a-fA-F]+/,
+    _number_arbitrary_radix: _ => /-?\d+[rR][0-9a-zA-Z]+/,
+    _number_octal: _ => /-?0\d+/,
 
-    number_double: $ => token(
+    number_double: _ => token(
       choice(
         seq(DIGITS, '.', optional(DIGITS), optional(seq((/[eE]/), optional(choice('-', '+')), DIGITS)), optional(/[fFdD]/)),
         seq('.', DIGITS, optional(seq((/[eE]/), optional(choice('-', '+')), DIGITS)), optional(/[fFdD]/)),
@@ -99,33 +89,24 @@ module.exports = grammar({
     number_ratio: _ => /[-+]?\d+\/\d+/,
 
     // -------------------------------------------------------------------------
-    // Symbolic Value - ##Inf, ##-Inf, ##NaN
-    // -------------------------------------------------------------------------
-
-    symbolic_value: $ => seq('##', choice($.infinity, $.negative_infinity, $.not_a_number)),
-    infinity: _ => 'Inf',
-    negative_infinity: _ => '-Inf',
-    not_a_number: _ => 'NaN',
-
-    // -------------------------------------------------------------------------
     // Character - \a
     // -------------------------------------------------------------------------
 
     character: $ => $._character,
     _character: $ => seq('\\', choice($._normal_char, $._special_char, $._unicode_char, $._octal_char)),
     _normal_char: _ => /./,
-    _special_char: $ => choice('newline', 'space', 'tab', 'formfeed', 'backspace', 'return'),
+    _special_char: _ => choice('newline', 'space', 'tab', 'formfeed', 'backspace', 'return'),
     _unicode_char: $ => seq('u', $._hex_char, $._hex_char, $._hex_char, $._hex_char),
-    _hex_char: $ => /[A-Fa-f0-9]/,
+    _hex_char: _ => /[A-Fa-f0-9]/,
     _octal_char: $ => seq('o', $._octal_num),
-    _octal_num: $ => choice(/[0-3][0-7][0-7]/, /[0-7][0-7]/, /[0-7]/),
+    _octal_num: _ => choice(/[0-3][0-7][0-7]/, /[0-7][0-7]/, /[0-7]/),
 
     // -------------------------------------------------------------------------
     // Strings - ""
     // -------------------------------------------------------------------------
 
     string: $ => $._string,
-    _string: $ => seq('"', repeat(choice('\\"', /[^"]/)), '"'),
+    _string: _ => seq('"', repeat(choice('\\"', /[^"]/)), '"'),
 
 
     // -------------------------------------------------------------------------
@@ -143,13 +124,13 @@ module.exports = grammar({
     // Keywords - :foo
     // -------------------------------------------------------------------------
 
-    keyword: $ => $._keyword,
-    _keyword: $ => choice(
+    _keyword: $ => seq(':', $.keyword),
+    keyword: $ => choice(
       $._unqualified_keyword,
     ),
 
     _unqualified_keyword: $ => seq(':', $._keyword_chars),
-    _keyword_chars: $ => /[a-zA-Z0-9\-_\!\+\.][a-zA-Z0-9\-_\!\+\.\?]*/,
+    _keyword_chars: _ => /[a-zA-Z0-9\-_\!\+\.][a-zA-Z0-9\-_\!\+\.\?]*/,
 
     // -------------------------------------------------------------------------
     // Symbols - foo
@@ -165,14 +146,11 @@ module.exports = grammar({
     // Scoped symbols - foo
     // -------------------------------------------------------------------------
 
-    scoped_symbol: $ => prec.left(3, seq($.symbol, choice(':', '::'), $.symbol)),
-    _symbol: $ => choice(
-      $._symbol_chars,
-      $.qualified_symbol
-    ),
-
+    scoped_symbol: $ => prec.left(3, seq($.package, choice(':', '::'), $.symbol)),
+    package: $ => prec.left(3,seq( $.subpackage, repeat(seq('.', $.subpackage)))),
+    subpackage: _ => prec.left(3,/[a-zA-Z0-9\-_\!\+][a-zA-Z0-9\-_\!\+\?]*/),
     // reference: https://clojure.org/reference/reader#_symbols
-    _symbol_chars: _ => /[a-zA-Z0-9\-_\!\+\.][a-zA-Z0-9\-_\!\+\.\?]*/,
+    _symbol_chars: _ => /[a-zA-Z0-9\-_\!\+][a-zA-Z0-9\-_\!\+\?]*/,
     qualified_symbol: $ => $._qualified_symbol,
     _qualified_symbol: $ => seq($._symbol_chars, '/', $._symbol_chars),
 
@@ -184,14 +162,8 @@ module.exports = grammar({
     // -------------------------------------------------------------------------
 
     list: $ => $._list,
-    _list: $ => seq('(', repeat($._anything), ')'),
+    _list: $ => seq('(', optional(seq($._anything, repeat1(seq(' ', $._anything)))), ')'),
 
-    // -------------------------------------------------------------------------
-    // Vector - []
-    // -------------------------------------------------------------------------
-
-    vector: $ => $._vector,
-    _vector: $ => seq('[', repeat($._anything), ']'),
 
     // -------------------------------------------------------------------------
     // Hash Map - {}
@@ -231,45 +203,42 @@ module.exports = grammar({
     // Functions
     // -------------------------------------------------------------------------
 
-    _functions: $ => choice($.anonymous_function, $.shorthand_function, $.defn),
+    //_functions: $ => choice($.anonymous_function, $.shorthand_function, $.defn),
 
-    anonymous_function: $ => seq('(', 'fn', optional($.function_name), $._after_the_fn_name, ')'),
-    _after_the_fn_name: $ => choice($._single_arity_fn, $._multi_arity_fn),
-    function_name: $ => $.symbol,
-    _single_arity_fn: $ => seq($.params, optional($.function_body)),
-    _multi_arity_fn: $ => repeat1(seq('(', $._single_arity_fn, ')')),
+    //anonymous_function: $ => seq('(', 'fn', optional($.function_name), $._after_the_fn_name, ')'),
+    //_after_the_fn_name: $ => choice($._single_arity_fn, $._multi_arity_fn),
+    //function_name: $ => $.symbol,
+    //_multi_arity_fn: $ => repeat1(seq('(', $._single_arity_fn, ')')),
 
     // NOTE: I don't think we need to handle condition-map here explicitly
     //       it will just be detected as (hash_map) inside the function body
-    function_body: $ => repeat1($._anything),
+    //function_body: $ => repeat1($._anything),
 
-    // NOTE: we can probably be more specific here than just "vector"
-    params: $ => $.vector,
 
-    shorthand_function: $ => seq('#(', repeat($._anything), ')'),
-    shorthand_function_arg: $ => /%[1-9&]*/,
+    //shorthand_function: $ => seq('#(', repeat($._anything), ')'),
+    //shorthand_function_arg: $ => /%[1-9&]*/,
 
-    defn: $ => seq('(', choice('defn', 'defn-'),
-                        optional($.metadata),
-                        $.function_name,
-                        optional($.docstring),
-                        optional($.attr_map),
-                        $._after_the_fn_name, ')'),
-    docstring: $ => $.string,
-    attr_map: $ => $.hash_map,
+    //defn: $ => seq('(', choice('defn', 'defn-'),
+                        //optional($.metadata),
+                        //$.function_name,
+                        //optional($.docstring),
+                        //optional($.attr_map),
+                        //$._after_the_fn_name, ')'),
+    //docstring: $ => $.string,
+    //attr_map: $ => $.hash_map,
 
     // -------------------------------------------------------------------------
     // Metadata
     // -------------------------------------------------------------------------
 
-    metadata: $ => choice(repeat1($.metadata_shorthand), $._metadata_map),
-    _metadata_map: $ => seq('^', $.hash_map),
-    // NOTE: would it be useful to expose these as separate node types?
-    metadata_shorthand: $ => choice(
-      seq('^:', $._keyword_chars),
-      seq('^"', repeat(choice('\\"', /[^"]/)), '"'),
-      seq('^', $._symbol_chars)
-    ),
+    //metadata: $ => choice(repeat1($.metadata_shorthand), $._metadata_map),
+    //_metadata_map: $ => seq('^', $.hash_map),
+    //// NOTE: would it be useful to expose these as separate node types?
+    //metadata_shorthand: $ => choice(
+      //seq('^:', $._keyword_chars),
+      //seq('^"', repeat(choice('\\"', /[^"]/)), '"'),
+      //seq('^', $._symbol_chars)
+    //),
 
     // -------------------------------------------------------------------------
     // Syntax Quote and macro-related friends
@@ -279,7 +248,7 @@ module.exports = grammar({
     var_quote: $ => seq("#'", $.symbol),
     unquote: $ => seq('~', $._anything),
     unquote_splice: $ => seq('~@', $._anything),
-    gensym: $ => /[a-zA-Z\*\+\!\-_\?][a-zA-Z0-9\*\+\!\-_\?\':]*\#/,
+    gensym: _ => /[a-zA-Z\*\+\!\-_\?][a-zA-Z0-9\*\+\!\-_\?\':]*\#/,
 
     // -------------------------------------------------------------------------
     // Deref

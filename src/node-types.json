@@ -1,43 +1,5 @@
 [
   {
-    "type": "anonymous_function",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "function_body",
-          "named": true
-        },
-        {
-          "type": "function_name",
-          "named": true
-        },
-        {
-          "type": "params",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "attr_map",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "hash_map",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "boolean",
     "named": true,
     "fields": {},
@@ -93,10 +55,6 @@
       "required": false,
       "types": [
         {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
           "type": "boolean",
           "named": true
         },
@@ -109,10 +67,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -121,19 +75,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -157,27 +103,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -198,45 +128,6 @@
         },
         {
           "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "defn",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "attr_map",
-          "named": true
-        },
-        {
-          "type": "docstring",
-          "named": true
-        },
-        {
-          "type": "function_body",
-          "named": true
-        },
-        {
-          "type": "function_name",
-          "named": true
-        },
-        {
-          "type": "metadata",
-          "named": true
-        },
-        {
-          "type": "params",
           "named": true
         }
       ]
@@ -262,297 +153,13 @@
     }
   },
   {
-    "type": "docstring",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "function_body",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "character",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "defn",
-          "named": true
-        },
-        {
-          "type": "deref",
-          "named": true
-        },
-        {
-          "type": "gensym",
-          "named": true
-        },
-        {
-          "type": "hash_map",
-          "named": true
-        },
-        {
-          "type": "keyword",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "reader_conditional",
-          "named": true
-        },
-        {
-          "type": "scoped_symbol",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
-          "named": true
-        },
-        {
-          "type": "syntax_quote",
-          "named": true
-        },
-        {
-          "type": "tagged_literal",
-          "named": true
-        },
-        {
-          "type": "unquote",
-          "named": true
-        },
-        {
-          "type": "unquote_splice",
-          "named": true
-        },
-        {
-          "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "function_name",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "symbol",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "hash_map",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "character",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "defn",
-          "named": true
-        },
-        {
-          "type": "deref",
-          "named": true
-        },
-        {
-          "type": "gensym",
-          "named": true
-        },
-        {
-          "type": "hash_map",
-          "named": true
-        },
-        {
-          "type": "keyword",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
-          "named": true
-        },
-        {
-          "type": "namespace_map",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "reader_conditional",
-          "named": true
-        },
-        {
-          "type": "scoped_symbol",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
-          "named": true
-        },
-        {
-          "type": "syntax_quote",
-          "named": true
-        },
-        {
-          "type": "tagged_literal",
-          "named": true
-        },
-        {
-          "type": "unquote",
-          "named": true
-        },
-        {
-          "type": "unquote_splice",
-          "named": true
-        },
-        {
-          "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "ignore_form",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
         {
           "type": "boolean",
           "named": true
@@ -566,10 +173,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -578,19 +181,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -614,27 +209,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -655,10 +234,6 @@
         },
         {
           "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -678,10 +253,6 @@
       "required": false,
       "types": [
         {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
           "type": "boolean",
           "named": true
         },
@@ -694,10 +265,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -706,19 +273,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -742,27 +301,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -784,37 +327,9 @@
         {
           "type": "var_quote",
           "named": true
-        },
-        {
-          "type": "vector",
-          "named": true
         }
       ]
     }
-  },
-  {
-    "type": "metadata",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "hash_map",
-          "named": true
-        },
-        {
-          "type": "metadata_shorthand",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "metadata_shorthand",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "namespace_map",
@@ -825,10 +340,6 @@
       "required": false,
       "types": [
         {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
           "type": "boolean",
           "named": true
         },
@@ -841,10 +352,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -853,19 +360,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -889,27 +388,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -930,10 +413,6 @@
         },
         {
           "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -976,15 +455,15 @@
     "fields": {}
   },
   {
-    "type": "params",
+    "type": "package",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "vector",
+          "type": "subpackage",
           "named": true
         }
       ]
@@ -999,10 +478,6 @@
       "required": false,
       "types": [
         {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
           "type": "boolean",
           "named": true
         },
@@ -1015,10 +490,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -1027,19 +498,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -1063,27 +526,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -1104,10 +551,6 @@
         },
         {
           "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -1123,13 +566,9 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
         {
           "type": "boolean",
           "named": true
@@ -1143,10 +582,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -1155,19 +590,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -1191,27 +618,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -1232,10 +643,6 @@
         },
         {
           "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -1250,10 +657,6 @@
       "required": false,
       "types": [
         {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
           "type": "boolean",
           "named": true
         },
@@ -1266,10 +669,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -1278,19 +677,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -1314,27 +705,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -1355,10 +730,6 @@
         },
         {
           "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -1373,6 +744,10 @@
       "required": true,
       "types": [
         {
+          "type": "package",
+          "named": true
+        },
+        {
           "type": "symbol",
           "named": true
         }
@@ -1385,258 +760,17 @@
     "fields": {}
   },
   {
-    "type": "set",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "character",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "defn",
-          "named": true
-        },
-        {
-          "type": "deref",
-          "named": true
-        },
-        {
-          "type": "gensym",
-          "named": true
-        },
-        {
-          "type": "hash_map",
-          "named": true
-        },
-        {
-          "type": "keyword",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "reader_conditional",
-          "named": true
-        },
-        {
-          "type": "scoped_symbol",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
-          "named": true
-        },
-        {
-          "type": "syntax_quote",
-          "named": true
-        },
-        {
-          "type": "tagged_literal",
-          "named": true
-        },
-        {
-          "type": "unquote",
-          "named": true
-        },
-        {
-          "type": "unquote_splice",
-          "named": true
-        },
-        {
-          "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "shebang_line",
     "named": true,
     "fields": {}
   },
   {
-    "type": "shorthand_function",
+    "type": "string",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "character",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "defn",
-          "named": true
-        },
-        {
-          "type": "deref",
-          "named": true
-        },
-        {
-          "type": "gensym",
-          "named": true
-        },
-        {
-          "type": "hash_map",
-          "named": true
-        },
-        {
-          "type": "keyword",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "reader_conditional",
-          "named": true
-        },
-        {
-          "type": "scoped_symbol",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
-          "named": true
-        },
-        {
-          "type": "syntax_quote",
-          "named": true
-        },
-        {
-          "type": "tagged_literal",
-          "named": true
-        },
-        {
-          "type": "unquote",
-          "named": true
-        },
-        {
-          "type": "unquote_splice",
-          "named": true
-        },
-        {
-          "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
-    "type": "string",
+    "type": "subpackage",
     "named": true,
     "fields": {}
   },
@@ -1656,40 +790,13 @@
     }
   },
   {
-    "type": "symbolic_value",
+    "type": "syntax_quote",
     "named": true,
     "fields": {},
     "children": {
       "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "infinity",
-          "named": true
-        },
-        {
-          "type": "negative_infinity",
-          "named": true
-        },
-        {
-          "type": "not_a_number",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "syntax_quote",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
         {
           "type": "boolean",
           "named": true
@@ -1703,10 +810,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -1715,19 +818,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -1751,27 +846,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -1792,10 +871,6 @@
         },
         {
           "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -1806,13 +881,9 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
         {
           "type": "boolean",
           "named": true
@@ -1826,10 +897,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -1838,19 +905,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -1874,27 +933,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -1915,10 +958,6 @@
         },
         {
           "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -1929,13 +968,9 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
         {
           "type": "boolean",
           "named": true
@@ -1949,10 +984,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -1961,19 +992,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -1997,27 +1020,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -2038,10 +1045,6 @@
         },
         {
           "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -2052,13 +1055,9 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
         {
           "type": "boolean",
           "named": true
@@ -2072,10 +1071,6 @@
           "named": true
         },
         {
-          "type": "defn",
-          "named": true
-        },
-        {
           "type": "deref",
           "named": true
         },
@@ -2084,19 +1079,11 @@
           "named": true
         },
         {
-          "type": "hash_map",
-          "named": true
-        },
-        {
           "type": "keyword",
           "named": true
         },
         {
           "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
           "named": true
         },
         {
@@ -2120,27 +1107,11 @@
           "named": true
         },
         {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
           "named": true
         },
         {
@@ -2161,10 +1132,6 @@
         },
         {
           "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
           "named": true
         }
       ]
@@ -2186,127 +1153,8 @@
     }
   },
   {
-    "type": "vector",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "character",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "defn",
-          "named": true
-        },
-        {
-          "type": "deref",
-          "named": true
-        },
-        {
-          "type": "gensym",
-          "named": true
-        },
-        {
-          "type": "hash_map",
-          "named": true
-        },
-        {
-          "type": "keyword",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "metadata",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "reader_conditional",
-          "named": true
-        },
-        {
-          "type": "scoped_symbol",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "shorthand_function",
-          "named": true
-        },
-        {
-          "type": "shorthand_function_arg",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "symbolic_value",
-          "named": true
-        },
-        {
-          "type": "syntax_quote",
-          "named": true
-        },
-        {
-          "type": "tagged_literal",
-          "named": true
-        },
-        {
-          "type": "unquote",
-          "named": true
-        },
-        {
-          "type": "unquote_splice",
-          "named": true
-        },
-        {
-          "type": "var_quote",
-          "named": true
-        },
-        {
-          "type": "vector",
-          "named": true
-        }
-      ]
-    }
+    "type": " ",
+    "named": false
   },
   {
     "type": "\"",
@@ -2321,15 +1169,7 @@
     "named": false
   },
   {
-    "type": "##",
-    "named": false
-  },
-  {
     "type": "#'",
-    "named": false
-  },
-  {
-    "type": "#(",
     "named": false
   },
   {
@@ -2369,6 +1209,10 @@
     "named": false
   },
   {
+    "type": ".",
+    "named": false
+  },
+  {
     "type": "/",
     "named": false
   },
@@ -2389,31 +1233,11 @@
     "named": false
   },
   {
-    "type": "[",
-    "named": false
-  },
-  {
     "type": "\\",
     "named": false
   },
   {
     "type": "\\\"",
-    "named": false
-  },
-  {
-    "type": "]",
-    "named": false
-  },
-  {
-    "type": "^",
-    "named": false
-  },
-  {
-    "type": "^\"",
-    "named": false
-  },
-  {
-    "type": "^:",
     "named": false
   },
   {
@@ -2429,18 +1253,6 @@
     "named": false
   },
   {
-    "type": "defn",
-    "named": false
-  },
-  {
-    "type": "defn-",
-    "named": false
-  },
-  {
-    "type": "fn",
-    "named": false
-  },
-  {
     "type": "formfeed",
     "named": false
   },
@@ -2449,23 +1261,11 @@
     "named": true
   },
   {
-    "type": "infinity",
-    "named": true
-  },
-  {
-    "type": "negative_infinity",
-    "named": true
-  },
-  {
     "type": "newline",
     "named": false
   },
   {
     "type": "nil",
-    "named": true
-  },
-  {
-    "type": "not_a_number",
     "named": true
   },
   {
@@ -2491,10 +1291,6 @@
   {
     "type": "return",
     "named": false
-  },
-  {
-    "type": "shorthand_function_arg",
-    "named": true
   },
   {
     "type": "space",
